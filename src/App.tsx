@@ -1,3 +1,5 @@
+import "./lib/bootstrap"
+
 import React, { FunctionComponent } from "react"
 
 import Base from "./lib/Base"

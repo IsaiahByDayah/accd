@@ -6,6 +6,18 @@ const ProjectThemeProvider: FunctionComponent = ({ children }) => {
         createMuiTheme({
             // MARK: Create your own Material-UI Theme here
             // See: https://material-ui.com/customization/default-theme/ for more on creating your own theme
+            typography: {
+                fontFamily: "'Roboto Slab', sans-serif",
+            },
+            palette: {
+                primary: {
+                    main: "#2EC4B6",
+                    contrastText: "#FFFFFF",
+                },
+                secondary: {
+                    main: "#FF9F1C",
+                },
+            },
         })
     )
 

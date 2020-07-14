@@ -15,5 +15,4 @@
  * Example:
  */
 // import "typeface-modak"
-
-export const hello = "Hello, World!"
+import "typeface-roboto-slab"
