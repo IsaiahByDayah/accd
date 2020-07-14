@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Example HelloWorld 1`] = `
+<p
+  className="example-helloworld-muitypography-root-1 example-helloworld-muitypography-body1-1"
+>
+  Hello, 
+  World
+  !
+</p>
+`;
