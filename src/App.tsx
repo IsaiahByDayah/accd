@@ -1,8 +1,7 @@
 import React, { FunctionComponent } from "react"
 
-import Base from "./lib/Base"
-
-import HelloWorld from "./components/HelloWorld"
+import Base from "components/Base"
+import HelloWorld from "components/HelloWorld"
 
 const App: FunctionComponent = () => (
     <Base>
