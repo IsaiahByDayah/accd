@@ -1,11 +1,10 @@
-import "./lib/bootstrap"
+import "bootstrap"
 
 import React, { FunctionComponent } from "react"
 import { AppBar, Toolbar, Typography, Box, TextField, InputAdornment } from "@material-ui/core"
 import { SearchRounded } from "@material-ui/icons"
 
 import Base from "components/Base"
-import HelloWorld from "components/HelloWorld"
 
 const App: FunctionComponent = () => (
     <Base>
@@ -38,7 +37,6 @@ const App: FunctionComponent = () => (
                 </Box>
             </Toolbar>
         </AppBar>
-        <HelloWorld />
     </Base>
 )
 
