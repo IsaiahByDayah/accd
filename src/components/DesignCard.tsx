@@ -1,67 +1,128 @@
 import React, { FC } from "react"
-import { Paper, Box, Typography, Avatar, IconButton, Icon } from "@material-ui/core"
-import { FavoriteOutlined } from "@material-ui/icons"
+import { Paper, Box, Typography, Avatar, IconButton, Icon, Grid, colors, Color, makeStyles } from "@material-ui/core"
+import { FavoriteRounded, FavoriteBorderRounded } from "@material-ui/icons"
+import cx from "classnames"
 
-import { placeholderImage } from "../lib/utils/image"
+import Tag from "components/Tag"
+
+const useStyles = makeStyles(({ spacing, shape, typography, palette }) => ({
+    root: {
+        maxWidth: spacing(100),
+    },
+    title: {
+        fontWeight: "bold",
+    },
+    code: {
+        color: palette.secondary.dark,
+        marginLeft: spacing(),
+    },
+    image: {
+        maxWidth: "100%",
+        width: "100%",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        borderRadius: shape.borderRadius,
+        flexShrink: 0,
+        flexGrow: 0,
+    },
+    topImage: {
+        height: spacing(20),
+    },
+    bottomImage: {
+        height: spacing(10),
+    },
+    avatar: {
+        height: spacing(3),
+        width: spacing(3),
+    },
+    creatorName: {
+        marginLeft: spacing(),
+        flexShrink: 0,
+        fontSize: typography.body2.fontSize,
+    },
+    tags: {
+        display: "flex",
+        flexGrow: 1,
+        overflow: "hidden",
+    },
+    tag: {
+        marginRight: spacing(),
+    },
+    favorited: {
+        color: palette.secondary.main,
+    },
+}))
 
 type DesignCardProps = {
     title: string
-    tags?: string[]
+    code: string
+    images: string[]
+    tags: string[]
+    creatorImage?: string
     creatorName: string
+    favorited?: boolean
+    onFavoriteClick?: () => void
 }
 
-const DesignCard: FC<DesignCardProps> = ({ title, tags = [], creatorName }) => (
-    <Paper>
-        <Box p={2}>
-            <Box display="flex" alignItems="center">
-                <Typography style={{ fontWeight: 700 }}>{title}</Typography>
-                <Typography style={{ color: "rgba(0,0,0,0.4)", marginLeft: 5 }}>#0000-0000-0000</Typography>
-            </Box>
-            {/* <CardMedia image={placeholderImage({ h: 500, w: 1000 })}  /> */}
-            <Box
-                mt={1}
-                style={{
-                    maxWidth: "100%",
-                    backgroundImage: `url(${placeholderImage({ h: 100, w: 1000 })})`,
-                    height: 200,
-                    width: "100%",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    borderRadius: 10,
-                }}
-            />
+const DesignCard: FC<DesignCardProps> = ({
+    title,
+    code,
+    images,
+    tags,
+    creatorImage,
+    creatorName,
+    favorited,
+    onFavoriteClick,
+}) => {
+    const classes = useStyles()
 
-            <Box pt={1} display="flex" alignItems="center">
-                <Avatar alt={`${creatorName}'s Profile Picture`} />
-                <Typography style={{ marginLeft: 5 }}>{creatorName}</Typography>
-                <Box display="flex" mx={2} flexGrow={1}>
-                    {tags.map(tag => (
-                        <Typography
-                            variant="caption"
-                            style={{
-                                backgroundColor: "#2EC4B6",
-                                color: "white",
-                                // fontWeight: 600,
-                                borderRadius: 10,
-                                padding: 5,
-                                marginRight: 5,
-                                "&:last-child": {
-                                    marginRight: 0,
-                                },
-                            }}
-                        >
-                            {tag}
-                        </Typography>
-                    ))}
+    return (
+        <Paper className={classes.root}>
+            <Box px={3} py={2}>
+                <Box display="flex" alignItems="center">
+                    <Typography className={classes.title}>{title}</Typography>
+                    <Typography className={classes.code}>#{code}</Typography>
                 </Box>
-                <IconButton>
-                    <Icon>
-                        <FavoriteOutlined />
-                    </Icon>
-                </IconButton>
+
+                {images.length > 0 && (
+                    <Box pt={1}>
+                        <Grid container spacing={2}>
+                            {images.slice(0, 4).map((image, index) => (
+                                <Grid key={`${index}-${image}`} item xs={index === 0 ? 12 : 4}>
+                                    <Box
+                                        className={cx(classes.image, {
+                                            [classes.topImage]: index === 0,
+                                            [classes.bottomImage]: index > 0,
+                                        })}
+                                        style={{
+                                            backgroundImage: `url(${image})`,
+                                        }}
+                                    />
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
+                )}
+
+                <Box pt={1} display="flex" alignItems="center">
+                    <Avatar className={classes.avatar} alt={`${creatorName}'s Profile Picture`} src={creatorImage} />
+                    <Typography className={classes.creatorName}>{creatorName}</Typography>
+                    <Box className={classes.tags} mx={2}>
+                        {tags.map((tag, index) => (
+                            <Box key={`${index}-${tag}`} className={classes.tag}>
+                                <Tag>{tag}</Tag>
+                            </Box>
+                        ))}
+                    </Box>
+                    <IconButton onClick={onFavoriteClick}>
+                        <Icon>
+                            {favorited ? <FavoriteRounded className={classes.favorited} /> : <FavoriteBorderRounded />}
+                        </Icon>
+                    </IconButton>
+                </Box>
             </Box>
-        </Box>
-    </Paper>
-)
+        </Paper>
+    )
+}
 
 export default DesignCard
