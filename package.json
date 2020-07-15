@@ -2,6 +2,7 @@
 	"name": "cra-typescript",
 	"version": "0.1.0",
 	"scripts": {
+		"dev": "yarn start",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
