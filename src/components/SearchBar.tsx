@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import { Box, TextField, InputAdornment, makeStyles, StandardTextFieldProps } from "@material-ui/core"
 import { SearchRounded } from "@material-ui/icons"
+import cx from "classnames"
 
 const useStyles = makeStyles(({ spacing, palette, typography }) => ({
     root: {
@@ -13,10 +14,10 @@ const useStyles = makeStyles(({ spacing, palette, typography }) => ({
     },
 }))
 
-const SearchBar: FC<StandardTextFieldProps> = ({ InputProps, inputProps, ...rest }) => {
+const SearchBar: FC<StandardTextFieldProps> = ({ className, InputProps, inputProps, ...rest }) => {
     const classes = useStyles()
     return (
-        <Box className={classes.root}>
+        <Box className={cx(classes.root, className)}>
             <TextField
                 fullWidth
                 InputProps={{

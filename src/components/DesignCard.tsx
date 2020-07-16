@@ -78,7 +78,7 @@ const DesignCard: FC<DesignCardProps> = ({
 
     return (
         <Paper className={classes.root}>
-            <Box px={3} py={2}>
+            <Box px={2} py={1}>
                 <Box display="flex" alignItems="center">
                     <Typography className={classes.title}>{title}</Typography>
                     <Typography className={classes.code}>#{code}</Typography>
@@ -86,7 +86,7 @@ const DesignCard: FC<DesignCardProps> = ({
 
                 {images.length > 0 && (
                     <Box pt={1}>
-                        <Grid container spacing={2}>
+                        <Grid container spacing={1}>
                             {images.slice(0, 4).map((image, index) => (
                                 <Grid key={`${index}-${image}`} item xs={index === 0 ? 12 : 4}>
                                     <Box

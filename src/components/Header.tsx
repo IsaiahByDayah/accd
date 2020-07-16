@@ -1,5 +1,5 @@
 import React from "react"
-import { AppBar, Toolbar, Typography, Box, makeStyles } from "@material-ui/core"
+import { AppBar, Toolbar, Typography, Box, makeStyles, Container } from "@material-ui/core"
 
 import SearchBar from "components/SearchBar"
 
@@ -7,24 +7,29 @@ const useStyles = makeStyles(({ palette }) => ({
     root: {
         backgroundColor: palette.primary.main,
         color: palette.common.white,
-        // color: palette.augmentColor({ main: palette.text.primary }).dark,
+        maxWidth: "100%",
+    },
+    toolbar: {
+        justifyContent: "space-between",
     },
     title: {
         fontWeight: "bold",
-        flexGrow: 1,
+    },
+    rightContainer: {
+        flexBasis: "40%",
     },
 }))
 
 const Header = () => {
     const classes = useStyles()
     return (
-        <AppBar className={classes.root} elevation={0} position="sticky">
-            <Toolbar>
+        <AppBar className={classes.root} elevation={0} position="static">
+            <Toolbar className={classes.toolbar}>
                 <Typography className={classes.title} variant="h6">
-                    Animal Crossing Custom Designs
+                    AC Designs
                 </Typography>
 
-                <Box>
+                <Box className={classes.rightContainer}>
                     <SearchBar />
                 </Box>
             </Toolbar>
