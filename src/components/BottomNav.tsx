@@ -4,11 +4,15 @@ import { HomeRounded, FavoriteRounded, ExploreRounded } from "@material-ui/icons
 import cx from "classnames"
 import { useRouteMatch, useHistory } from "react-router-dom"
 
-const useStyles = makeStyles(({ palette }) => ({
+const useStyles = makeStyles(({ palette, breakpoints }) => ({
     root: {
         backgroundColor: palette.primary.main,
         color: palette.common.white,
         maxWidth: "100%",
+
+        [breakpoints.up("sm")]: {
+            display: "none",
+        },
     },
     label: {
         color: palette.common.white,
@@ -18,11 +22,11 @@ const useStyles = makeStyles(({ palette }) => ({
     },
 }))
 
-interface BottomNavProps extends BottomNavigationProps {
+interface BottomNavBaseProps extends BottomNavigationProps {
     onTabChange?: (value: any) => void
 }
 
-const BottomNav: FC<BottomNavProps> = ({ className, onTabChange, ...rest }) => {
+export const BottomNavBase: FC<BottomNavBaseProps> = ({ className, onTabChange, ...rest }) => {
     const classes = useStyles()
     return (
         <BottomNavigation
@@ -49,12 +53,12 @@ const BottomNav: FC<BottomNavProps> = ({ className, onTabChange, ...rest }) => {
     )
 }
 
-export const RoutedBottomNav = () => {
+export const BottomNav = () => {
     const history = useHistory()
-    // const homeMatch = useRouteMatch({
-    //     path: "/",
-    //     exact: true,
-    // })
+    const homeMatch = useRouteMatch({
+        path: ["/", "/home"],
+        exact: true,
+    })
     const exploreMatch = useRouteMatch({
         path: "/explore",
     })
@@ -63,9 +67,9 @@ export const RoutedBottomNav = () => {
     })
 
     const getValue = () => {
+        if (homeMatch) return 0
         if (exploreMatch) return 1
         if (favoritesMatch) return 2
-        return 0
     }
 
     const onTabChange = (value: any) => {
@@ -74,7 +78,7 @@ export const RoutedBottomNav = () => {
         if (value === 2) history.push("/favorites")
     }
 
-    return <BottomNav value={getValue()} onTabChange={onTabChange} />
+    return <BottomNavBase value={getValue()} onTabChange={onTabChange} />
 }
 
 export default BottomNav
