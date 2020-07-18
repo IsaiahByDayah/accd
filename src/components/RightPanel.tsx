@@ -15,7 +15,9 @@ const RightPanel = () => {
     const classes = useStyles()
     return (
         <Grid className={classes.root} item xs={12} md={3}>
-            <Box bgcolor="blue">Right Panel</Box>
+            <Box display="flex" flexDirection="column" alignItems="center">
+                Right Panel
+            </Box>
         </Grid>
     )
 }

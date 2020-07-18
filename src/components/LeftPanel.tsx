@@ -14,8 +14,10 @@ const useStyles = makeStyles(({ breakpoints }) => ({
 const LeftPanel = () => {
     const classes = useStyles()
     return (
-        <Grid className={classes.root} item xs={12} sm={2} md={3}>
-            <Box bgcolor="red">Left Panel</Box>
+        <Grid className={classes.root} item xs={12} sm={2} md={1} lg={3}>
+            <Box display="flex" flexDirection="column" alignItems="center">
+                Left Panel
+            </Box>
         </Grid>
     )
 }
