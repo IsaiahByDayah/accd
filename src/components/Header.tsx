@@ -1,12 +1,14 @@
 import React from "react"
-import { AppBar, Toolbar, Typography, Box, makeStyles, Container } from "@material-ui/core"
+import { AppBar, Toolbar, Typography, Box, makeStyles, Container, useTheme } from "@material-ui/core"
 
 import SearchBar from "components/SearchBar"
 
 const useStyles = makeStyles(({ palette }) => ({
     root: {
-        backgroundColor: palette.primary.main,
-        color: palette.common.white,
+        // backgroundColor: palette.primary.main,
+        // color: palette.common.white,
+        backgroundColor: palette.background.default,
+        color: palette.primary.main,
         maxWidth: "100%",
     },
     toolbar: {
@@ -22,6 +24,7 @@ const useStyles = makeStyles(({ palette }) => ({
 
 const Header = () => {
     const classes = useStyles()
+    const theme = useTheme()
     return (
         <AppBar className={classes.root} elevation={0} position="static">
             <Toolbar className={classes.toolbar}>
@@ -30,7 +33,7 @@ const Header = () => {
                 </Typography>
 
                 <Box className={classes.rightContainer}>
-                    <SearchBar />
+                    <SearchBar tint={theme.palette.primary.main} />
                 </Box>
             </Toolbar>
         </AppBar>
