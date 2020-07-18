@@ -2,14 +2,19 @@ import React, { FC, ReactNode } from "react"
 import { makeStyles, Modal, Paper, Box, Container, IconButton, Typography } from "@material-ui/core"
 import { CloseRounded, FavoriteRounded, ChatBubbleRounded, LiveHelpRounded, BeenhereRounded } from "@material-ui/icons"
 
+import { usePrompt } from "providers/PromptProvider"
+
 import Button from "components/Button"
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     root: {
         display: "flex",
-        placeItems: "center",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "center",
     },
     paper: {
+        outline: 0,
         position: "relative",
 
         [breakpoints.down("xs")]: {
@@ -49,7 +54,7 @@ interface PromptProps {
 export const PromptBase: FC<PromptProps> = ({ open, header, title, description, children, onClose }) => {
     const classes = useStyles()
     return (
-        <Modal className={classes.root} open={open}>
+        <Modal className={classes.root} open={open} onClose={onClose}>
             <Paper className={classes.paper}>
                 <Box className={classes.container} px={2} py={6}>
                     <Container>
@@ -83,23 +88,20 @@ const useLoginStyles = makeStyles(({ spacing }) => ({
     },
 }))
 
-interface LoginPromptProps {
-    reason: "like" | "comment"
+type LoginPromptReason = "like" | "comment"
+
+export interface LoginPromptProps {
+    reason: LoginPromptReason
     user: string
+    onClose?: () => void
 }
 
-export const LoginPrompt: FC<LoginPromptProps> = ({ reason, user }) => {
+export const LoginPrompt: FC<LoginPromptProps> = ({ reason, user, onClose }) => {
     const classes = useLoginStyles()
 
     return (
         <PromptBase
             open={true}
-            title={reason === "like" ? "Like a design to show you care!" : "Reply to join the conversation!"}
-            description={
-                reason === "like"
-                    ? `Join now to let ${user} know you like their design.`
-                    : `Join now to respond to ${user}'s design.`
-            }
             header={
                 <Box py={3} display="flex" justifyContent="center" alignItems="center">
                     {reason === "like" ? (
@@ -117,7 +119,13 @@ export const LoginPrompt: FC<LoginPromptProps> = ({ reason, user }) => {
                     )}
                 </Box>
             }
-            onClose={() => null}
+            title={reason === "like" ? "Like a design to show you care!" : "Reply to join the conversation!"}
+            description={
+                reason === "like"
+                    ? `Join now to let ${user} know you like their design.`
+                    : `Join now to respond to ${user}'s design.`
+            }
+            onClose={onClose}
         >
             <Box py={4} display="flex" flexDirection="column">
                 <Button className={classes.loginButton} variant="contained" fullWidth>
@@ -137,7 +145,7 @@ const useConfirmationStyles = makeStyles(({ spacing }) => ({
     },
 }))
 
-interface ConfirmationPromptProps {
+export interface ConfirmationPromptProps {
     title?: string
     description?: string
     onConfirm: () => void
@@ -181,7 +189,18 @@ export const ConfirmationPrompt: FC<ConfirmationPromptProps> = ({
 }
 
 const Prompt = () => {
-    return <PromptBase open={false} />
+    const { open, current } = usePrompt()
+
+    if (!open) return null
+
+    switch (current?.type) {
+        case "login":
+            return <LoginPrompt {...current} />
+        case "confirm":
+            return <ConfirmationPrompt {...current} />
+        default:
+            return null
+    }
 }
 
 export default Prompt
