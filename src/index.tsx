@@ -45,6 +45,9 @@ if (process.env.NODE_ENV === "development") {
 
     // MARK: connect to local Firebase Functions emulator
     firebase.functions().useFunctionsEmulator("http://localhost:5001")
+} else {
+    firebase.firestore().enablePersistence()
+    firebase.analytics()
 }
 
 ReactDOM.render(<App />, document.getElementById("root"))

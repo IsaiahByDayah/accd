@@ -5,10 +5,11 @@ import { withKnobs } from "@storybook/addon-knobs"
 import { withA11y } from "@storybook/addon-a11y"
 import { withConsole } from "@storybook/addon-console"
 import requireContext from "require-context.macro"
+import { BrowserRouter } from "react-router-dom"
 
 import { decorator } from "utils"
 
-import Base from "components/Base"
+import CSSBaselined from "components/CSSBaselined"
 
 import SnapshotStylesProvider from "providers/SnapshotStylesProvider"
 import ProjectThemeProvider from "providers/ProjectThemeProvider"
@@ -20,9 +21,10 @@ function loadStories() {
 
 addDecorator(withKnobs)
 addDecorator(withA11y)
-addDecorator(decorator(ProjectThemeProvider))
-addDecorator(decorator(Base))
 addDecorator(decorator(SnapshotStylesProvider))
+addDecorator(decorator(ProjectThemeProvider))
+addDecorator(decorator(CSSBaselined))
+addDecorator(decorator(BrowserRouter))
 addDecorator((storyFn, context) => withConsole()(storyFn)(context))
 
 configure(loadStories, module)
