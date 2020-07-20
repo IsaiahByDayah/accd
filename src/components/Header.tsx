@@ -33,7 +33,9 @@ const Header = () => {
                 </Typography>
 
                 <Box className={classes.rightContainer}>
-                    <SearchBar tint={theme.palette.primary.main} />
+                    {/* <SearchBar tint={theme.palette.primary.main} /> */}
+                    {/* <SearchBar tint={theme.palette.background.paper} /> */}
+                    <SearchBar opacity={1} />
                 </Box>
             </Toolbar>
         </AppBar>
