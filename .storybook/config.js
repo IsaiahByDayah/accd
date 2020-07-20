@@ -1,8 +1,9 @@
 import "bootstrap"
 
-import { configure, addDecorator } from "@storybook/react"
+import { configure, addDecorator, addParameters } from "@storybook/react"
 import { withKnobs } from "@storybook/addon-knobs"
 import { withA11y } from "@storybook/addon-a11y"
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
 import { withConsole } from "@storybook/addon-console"
 import requireContext from "require-context.macro"
 import { BrowserRouter } from "react-router-dom"
@@ -18,6 +19,12 @@ const req = requireContext("../src", true, /.stories.tsx$/)
 function loadStories() {
     req.keys().forEach(filename => req(filename))
 }
+
+addParameters({
+    viewport: {
+        viewports: INITIAL_VIEWPORTS,
+    },
+})
 
 addDecorator(withKnobs)
 addDecorator(withA11y)

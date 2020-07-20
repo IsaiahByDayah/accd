@@ -1,7 +1,11 @@
 import React from "react"
 import { Grid, Box, makeStyles } from "@material-ui/core"
+import Icon from "@mdi/react"
+import { mdiLeaf } from "@mdi/js"
 
-const useStyles = makeStyles(({ breakpoints }) => ({
+import { useAuth } from "providers/AuthProvider"
+
+const useStyles = makeStyles(({ breakpoints, palette }) => ({
     root: {
         display: "none",
 
@@ -9,14 +13,21 @@ const useStyles = makeStyles(({ breakpoints }) => ({
             display: "block",
         },
     },
+    icon: {
+        color: palette.primary.main,
+    },
 }))
 
 const LeftPanel = () => {
     const classes = useStyles()
+    const { user } = useAuth()
+
+    if (!user) return null
+
     return (
         <Grid className={classes.root} item xs={12} sm={2} md={1} lg={3}>
-            <Box display="flex" flexDirection="column" alignItems="center">
-                Left Panel
+            <Box py={2} display="flex" flexDirection="column" alignItems="center">
+                <Icon className={classes.icon} path={mdiLeaf} size={1.5} />
             </Box>
         </Grid>
     )

@@ -1,19 +1,12 @@
 import React, { FC } from "react"
-import {
-    BottomNavigation,
-    BottomNavigationAction,
-    makeStyles,
-    BottomNavigationProps,
-    Box,
-    useTheme,
-} from "@material-ui/core"
-import { HomeRounded, FavoriteRounded, ExploreRounded } from "@material-ui/icons"
+import { BottomNavigation, BottomNavigationAction, makeStyles, BottomNavigationProps } from "@material-ui/core"
+import { FavoriteRounded, ExploreRounded } from "@material-ui/icons"
+import Icon from "@mdi/react"
+import { mdiBeehiveOutline, mdiCompass } from "@mdi/js"
 import cx from "classnames"
 import { useRouteMatch, useHistory } from "react-router-dom"
 
 import { useAuth } from "providers/AuthProvider"
-
-import Button from "components/Button"
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     root: {
@@ -31,51 +24,14 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     icon: {
         color: palette.common.white,
     },
-    button: {
-        flexGrow: 1,
-
-        "&:not(:first-child)": {
-            marginLeft: spacing(),
-        },
-    },
 }))
 
 interface BottomNavBaseProps extends BottomNavigationProps {
     onTabChange?: (value: any) => void
-    loggedIn?: boolean
-    onLogin: () => void
-    onSignup: () => void
 }
 
-export const BottomNavBase: FC<BottomNavBaseProps> = ({
-    className,
-    onTabChange,
-    loggedIn,
-    onLogin,
-    onSignup,
-    ...rest
-}) => {
+export const BottomNavBase: FC<BottomNavBaseProps> = ({ className, onTabChange, ...rest }) => {
     const classes = useStyles()
-    const theme = useTheme()
-
-    if (!loggedIn) {
-        return (
-            <Box className={cx(classes.root, className)} p={1} display="flex">
-                <Button className={classes.button} variant="outlined" tint="#fff" onClick={onLogin}>
-                    Log in
-                </Button>
-                <Button
-                    className={classes.button}
-                    variant="contained"
-                    tint="#fff"
-                    textContrastTint={theme.palette.primary.main}
-                    onClick={onSignup}
-                >
-                    Sign up
-                </Button>
-            </Box>
-        )
-    }
 
     return (
         <BottomNavigation
@@ -86,7 +42,7 @@ export const BottomNavBase: FC<BottomNavBaseProps> = ({
             <BottomNavigationAction
                 classes={{ label: classes.label }}
                 label="Home"
-                icon={<HomeRounded className={classes.icon} />}
+                icon={<Icon className={classes.icon} path={mdiBeehiveOutline} size={1} />}
             />
             <BottomNavigationAction
                 classes={{ label: classes.label }}
@@ -114,7 +70,9 @@ export const BottomNav = () => {
     const favoritesMatch = useRouteMatch({
         path: "/favorites",
     })
-    const { user, login } = useAuth()
+    const { user } = useAuth()
+
+    if (!Boolean(user)) return null
 
     const getValue = () => {
         if (homeMatch) return 0
@@ -128,15 +86,7 @@ export const BottomNav = () => {
         if (value === 2) history.push("/favorites")
     }
 
-    return (
-        <BottomNavBase
-            value={getValue()}
-            onTabChange={onTabChange}
-            loggedIn={Boolean(user)}
-            onLogin={login}
-            onSignup={login}
-        />
-    )
+    return <BottomNavBase value={getValue()} onTabChange={onTabChange} />
 }
 
 export default BottomNav

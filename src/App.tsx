@@ -1,39 +1,41 @@
 import "bootstrap"
 
-import React, { FunctionComponent } from "react"
-import { Box, Container, Grid } from "@material-ui/core"
-// import { BrowserRouter } from "react-router-dom"
-
-// import PromptProvider from "providers/PromptProvider"
+import React, { FC } from "react"
+import { Container, Grid, useMediaQuery, Theme, Box } from "@material-ui/core"
 
 import Base from "components/Base"
-import Header from "components/Header"
 import LeftPanel from "components/LeftPanel"
 import MiddlePanel from "components/MiddlePanel"
 import RightPanel from "components/RightPanel"
-import BottomNav from "components/BottomNav"
+import BottomLogin from "components/BottomLogin"
 import Prompt from "components/Prompt"
 
-const App: FunctionComponent = () => (
+const App: FC = () => (
     <Base>
-        {/* <Box display="flex" flexDirection="column" height="100vh"> */}
-        {/* <Header /> */}
-
-        {/* <Box py={2} flexGrow={1} overflow="auto"> */}
-        <Container disableGutters>
-            {/* <Grid container spacing={2}> */}
-            <Grid container>
-                <LeftPanel />
-                <MiddlePanel />
-                <RightPanel />
-            </Grid>
-        </Container>
-        {/* </Box> */}
-
-        {/* <BottomNav /> */}
-        {/* </Box> */}
+        <Box display="flex" flexDirection="column" height="100vh">
+            <AppContainer>
+                <Grid container>
+                    <LeftPanel />
+                    <MiddlePanel />
+                    <RightPanel />
+                </Grid>
+            </AppContainer>
+            <BottomLogin />
+        </Box>
         <Prompt />
     </Base>
 )
+
+const AppContainer: FC = ({ children }) => {
+    const mediumDown = useMediaQuery<Theme>(({ breakpoints }) => breakpoints.down("xs"))
+
+    return (
+        <Box flexGrow={1} overflow="auto">
+            <Container disableGutters={mediumDown}>
+                <>{children}</>
+            </Container>
+        </Box>
+    )
+}
 
 export default App
