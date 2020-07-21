@@ -1,11 +1,11 @@
-import React from "react"
+import React, { FC } from "react"
 import { Switch, Route } from "react-router-dom"
 import { makeStyles, Grid, Box, GridProps } from "@material-ui/core"
 
 import { useAuth } from "providers/AuthProvider"
 
-import RouteHeader from "components/RouteHeader"
-import BottomNav from "components/BottomNav"
+// import RouteHeader from "components/RouteHeader"
+// import BottomNav from "components/BottomBar"
 import Homepage from "components/Homepage"
 
 const useStyles = makeStyles(({ breakpoints, palette }) => ({
@@ -18,7 +18,7 @@ const useStyles = makeStyles(({ breakpoints, palette }) => ({
     },
 }))
 
-const MiddlePanel = () => {
+const MiddlePanel: FC = ({ children }) => {
     const classes = useStyles()
     const { user } = useAuth()
 
@@ -40,7 +40,8 @@ const MiddlePanel = () => {
 
     return (
         <Grid className={classes.root} item {...gridProps}>
-            <Box display="flex" flexDirection="column" height="100vh">
+            {children}
+            {/* <Box display="flex" flexDirection="column" height="100vh">
                 <RouteHeader />
 
                 <Box py={2} flexGrow={1} overflow="auto">
@@ -61,7 +62,7 @@ const MiddlePanel = () => {
                 </Box>
 
                 <BottomNav />
-            </Box>
+            </Box> */}
         </Grid>
     )
 }

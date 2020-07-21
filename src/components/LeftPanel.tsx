@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import { Grid, Box, makeStyles } from "@material-ui/core"
 import Icon from "@mdi/react"
 import { mdiLeaf } from "@mdi/js"
@@ -18,7 +18,7 @@ const useStyles = makeStyles(({ breakpoints, palette }) => ({
     },
 }))
 
-const LeftPanel = () => {
+const LeftPanel: FC = ({ children }) => {
     const classes = useStyles()
     const { user } = useAuth()
 
@@ -26,9 +26,10 @@ const LeftPanel = () => {
 
     return (
         <Grid className={classes.root} item xs={12} sm={2} md={1} lg={3}>
-            <Box py={2} display="flex" flexDirection="column" alignItems="center">
+            {children}
+            {/* <Box py={2} display="flex" flexDirection="column" alignItems="center">
                 <Icon className={classes.icon} path={mdiLeaf} size={1.5} />
-            </Box>
+            </Box> */}
         </Grid>
     )
 }

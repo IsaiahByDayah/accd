@@ -1,14 +1,23 @@
 import React, { FC } from "react"
-import { BottomNavigation, BottomNavigationAction, makeStyles, BottomNavigationProps } from "@material-ui/core"
+import {
+    makeStyles,
+    useTheme,
+    BottomNavigation,
+    BottomNavigationAction,
+    BottomNavigationProps,
+    Box,
+} from "@material-ui/core"
 import { FavoriteRounded, ExploreRounded } from "@material-ui/icons"
 import Icon from "@mdi/react"
-import { mdiBeehiveOutline, mdiCompass } from "@mdi/js"
+import { mdiBeehiveOutline } from "@mdi/js"
 import cx from "classnames"
 import { useRouteMatch, useHistory } from "react-router-dom"
 
 import { useAuth } from "providers/AuthProvider"
 
-const useStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
+import Button from "components/Button"
+
+const useBottomNavStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     root: {
         backgroundColor: palette.primary.main,
         color: palette.common.white,
@@ -31,7 +40,7 @@ interface BottomNavBaseProps extends BottomNavigationProps {
 }
 
 export const BottomNavBase: FC<BottomNavBaseProps> = ({ className, onTabChange, ...rest }) => {
-    const classes = useStyles()
+    const classes = useBottomNavStyles()
 
     return (
         <BottomNavigation
@@ -89,4 +98,65 @@ export const BottomNav = () => {
     return <BottomNavBase value={getValue()} onTabChange={onTabChange} />
 }
 
-export default BottomNav
+const useBottomLoginStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
+    root: {
+        backgroundColor: palette.primary.main,
+        color: palette.common.white,
+        maxWidth: "100%",
+
+        [breakpoints.up("md")]: {
+            display: "none",
+        },
+    },
+    button: {
+        flexGrow: 1,
+
+        "&:not(:first-child)": {
+            marginLeft: spacing(),
+        },
+    },
+}))
+
+interface BottomLoginBaseProps {
+    className?: string
+    onLogin: () => void
+    onSignup: () => void
+}
+
+export const BottomLoginBase: FC<BottomLoginBaseProps> = ({ className, onLogin, onSignup }) => {
+    const classes = useBottomLoginStyles()
+    const theme = useTheme()
+
+    return (
+        <Box className={cx(classes.root, className)} p={1} display="flex">
+            <Button className={classes.button} variant="outlined" tint="#fff" onClick={onLogin}>
+                Log in
+            </Button>
+            <Button
+                className={classes.button}
+                variant="contained"
+                tint="#fff"
+                textContrastTint={theme.palette.primary.main}
+                onClick={onSignup}
+            >
+                Sign up
+            </Button>
+        </Box>
+    )
+}
+
+export const BottomLogin = () => {
+    const { login } = useAuth()
+
+    return <BottomLoginBase onLogin={login} onSignup={login} />
+}
+
+const BottomBar = () => {
+    const { user } = useAuth()
+
+    if (user) return <BottomNav />
+
+    return <BottomLogin />
+}
+
+export default BottomBar
