@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Header Login 1`] = `
+<header
+  className="componentsheader-login-muipaper-root-1 componentsheader-login-muiappbar-root-1 componentsheader-login-muiappbar-positionstatic-1 componentsheader-login-muiappbar-colorprimary-1 componentsheader-login-makestyles-root-1 componentsheader-login-muipaper-elevation0-1"
+>
+  <div
+    className="componentsheader-login-muitoolbar-root-1 componentsheader-login-muitoolbar-regular-1 componentsheader-login-makestyles-toolbar-1 componentsheader-login-muitoolbar-gutters-1"
+  >
+    <svg
+      role="presentation"
+      style={
+        Object {
+          "height": "1.5rem",
+          "width": "1.5rem",
+        }
+      }
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+        style={
+          Object {
+            "fill": "currentColor",
+          }
+        }
+      />
+    </svg>
+    <h6
+      className="componentsheader-login-muitypography-root-1 componentsheader-login-makestyles-title-1 componentsheader-login-muitypography-h6-1"
+    >
+      AC Designs
+    </h6>
+    <div
+      className="componentsheader-login-muibox-root-1 componentsheader-login-muibox-root-2 componentsheader-login-makestyles-rightcontainer-1"
+    >
+      <div
+        className="componentsheader-login-muibox-root-1 componentsheader-login-muibox-root-3 componentsheader-login-makestyles-root-2 componentsheader-login-makestyles-root-3"
+      >
+        <div
+          className="componentsheader-login-muiformcontrol-root-1 componentsheader-login-muitextfield-root-1 componentsheader-login-muiformcontrol-fullwidth-1"
+        >
+          <div
+            className="componentsheader-login-muiinputbase-root-1 componentsheader-login-muiinput-root-1 componentsheader-login-muiinputbase-fullwidth-1 componentsheader-login-muiinput-fullwidth-1 componentsheader-login-muiinputbase-formcontrol-1 componentsheader-login-muiinput-formcontrol-1 componentsheader-login-muiinputbase-adornedend-1"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              aria-label="search-bar-textfield"
+              autoFocus={false}
+              className="componentsheader-login-muiinputbase-input-1 componentsheader-login-muiinput-input-1 componentsheader-login-makestyles-input-1 componentsheader-login-makestyles-input-2 componentsheader-login-muiinputbase-inputadornedend-1"
+              disabled={false}
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Search..."
+              required={false}
+              type="text"
+            />
+            <div
+              className="componentsheader-login-muiinputadornment-root-1 componentsheader-login-muiinputadornment-positionend-1"
+            >
+              <svg
+                aria-hidden={true}
+                className="componentsheader-login-muisvgicon-root-1 componentsheader-login-makestyles-icon-1 componentsheader-login-makestyles-icon-2"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;

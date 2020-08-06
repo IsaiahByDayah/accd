@@ -1,9 +1,13 @@
 import React, { FC, ReactNode } from "react"
-import { makeStyles, AppBar, Toolbar, Typography, Box, Grid } from "@material-ui/core"
+import { makeStyles, AppBar, Toolbar, Typography, Box, Grid, IconButton } from "@material-ui/core"
 import { useLocation } from "react-router-dom"
 import cx from "classnames"
+import Icon from "@mdi/react"
+import { mdiLeaf, mdiDotsHorizontal } from "@mdi/js"
 
 import { useAuth } from "providers/AuthProvider"
+
+import useBreakpoint, { Breakpoint } from "hooks/useBreakpoint"
 
 import SearchBar from "components/SearchBar"
 import TopContainer from "components/TopContainer"
@@ -11,15 +15,13 @@ import LeftPanel from "components/LeftPanel"
 import MiddlePanel from "components/MiddlePanel"
 import RightPanel from "components/RightPanel"
 import SideNavigation from "components/SideNavigation"
+import Button from "components/Button"
 
-const useStyles = makeStyles(({ palette }) => ({
+const useStyles = makeStyles(({ palette, spacing }) => ({
     root: {
         backgroundColor: palette.background.default,
         color: palette.primary.main,
         maxWidth: "100%",
-    },
-    toolbar: {
-        // justifyContent: "space-between",
     },
     title: {
         fontWeight: "bold",
@@ -35,6 +37,14 @@ const useStyles = makeStyles(({ palette }) => ({
     grow: {
         flexGrow: 1,
     },
+    icon: {
+        color: palette.primary.main,
+    },
+    button: {
+        "&:not(:last-child)": {
+            marginRight: spacing(),
+        },
+    },
 }))
 
 interface AppBarBaseProps {
@@ -48,7 +58,7 @@ export const AppBarBase: FC<AppBarBaseProps> = ({ start, title, search, end }) =
     const classes = useStyles()
     return (
         <AppBar className={classes.root} elevation={0} position="static">
-            <Toolbar className={classes.toolbar}>
+            <Toolbar>
                 {start && (
                     <Box mr={2} display="flex" alignItems="center">
                         {start}
@@ -61,11 +71,7 @@ export const AppBarBase: FC<AppBarBaseProps> = ({ start, title, search, end }) =
                     </Typography>
                 )}
 
-                {search && (
-                    // <Box className={classes.rightContainer}>
-                    <SearchBar className={cx(classes.searchBar, { [classes.grow]: !title })} opacity={1} />
-                    // </Box>
-                )}
+                {search && <SearchBar className={cx(classes.searchBar, { [classes.grow]: !title })} opacity={1} />}
 
                 {end && (
                     <Box ml={2} display="flex" alignItems="center">
@@ -112,20 +118,68 @@ const LoggedInTopBar = () => {
     return <LoggedInTopBarBase pathname={location.pathname} />
 }
 
-const LoggedOutTopBar = () => {
+type LoggedOutTopBarBaseProps = {
+    onMenuClick: () => void
+    onLogInClick: () => void
+    onSignUpClick: () => void
+}
+
+export const LoggedOutTopBarBase: FC<LoggedOutTopBarBaseProps> = ({ onMenuClick, onLogInClick, onSignUpClick }) => {
+    const classes = useStyles()
+    const breakpoint = useBreakpoint()
+
     return (
         <TopContainer>
             <Grid container>
-                {/* <LeftPanel>
-                    <SideNavigation />
-                </LeftPanel> */}
+                {/* NOTE: When logged out left panel is never display so don't include in component */}
+                {/* <LeftPanel>Logged Out Left Panel</LeftPanel> */}
                 <MiddlePanel>
-                    <AppBarBase />
+                    <AppBarBase
+                        start={<Icon path={mdiLeaf} size={1} />}
+                        search
+                        end={
+                            breakpoint < Breakpoint.md && (
+                                <IconButton onClick={onMenuClick}>
+                                    <Icon className={classes.icon} path={mdiDotsHorizontal} size={1} />
+                                </IconButton>
+                            )
+                        }
+                    />
                 </MiddlePanel>
-                <RightPanel>Logged Out Right Panel</RightPanel>
+                <RightPanel>
+                    <AppBarBase
+                        title=" "
+                        end={
+                            <>
+                                <Button className={classes.button} onClick={onLogInClick} variant="outlined">
+                                    Log in
+                                </Button>
+                                <Button
+                                    className={classes.button}
+                                    onClick={onSignUpClick}
+                                    variant="contained"
+                                    textContrastTint="#fff"
+                                >
+                                    Sign up
+                                </Button>
+                                <IconButton onClick={onMenuClick}>
+                                    <Icon
+                                        className={cx(classes.icon, classes.button)}
+                                        path={mdiDotsHorizontal}
+                                        size={1}
+                                    />
+                                </IconButton>
+                            </>
+                        }
+                    />
+                </RightPanel>
             </Grid>
         </TopContainer>
     )
+}
+
+const LoggedOutTopBar = () => {
+    return <LoggedOutTopBarBase onMenuClick={() => null} onSignUpClick={() => null} onLogInClick={() => null} />
 }
 
 const TopBar = () => {

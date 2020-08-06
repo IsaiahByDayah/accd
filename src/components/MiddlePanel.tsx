@@ -1,68 +1,34 @@
 import React, { FC } from "react"
-import { Switch, Route } from "react-router-dom"
-import { makeStyles, Grid, Box, GridProps } from "@material-ui/core"
+import { Grid, GridProps } from "@material-ui/core"
 
 import { useAuth } from "providers/AuthProvider"
 
-// import RouteHeader from "components/RouteHeader"
-// import BottomNav from "components/BottomBar"
-import Homepage from "components/Homepage"
+type MiddlePanelProps = {
+    className?: string
+    simulateUser?: boolean
+}
 
-const useStyles = makeStyles(({ breakpoints, palette }) => ({
-    root: {
-        // background: palette.background.default,
-        // [breakpoints.up("sm")]: {
-        //     borderLeft: `1px solid ${palette.primary.light}`,
-        //     borderRight: `1px solid ${palette.primary.light}`,
-        // },
-    },
-}))
-
-const MiddlePanel: FC = ({ children }) => {
-    const classes = useStyles()
+const MiddlePanel: FC<MiddlePanelProps> = ({ className, children, simulateUser }) => {
     const { user } = useAuth()
 
     let gridProps: GridProps
-    if (user) {
+    if (user || simulateUser) {
         gridProps = {
             xs: 12,
             sm: 10,
-            md: 8,
-            lg: 6,
+            md: 7,
+            lg: 5,
         }
     } else {
         gridProps = {
             xs: 12,
-            sm: 10,
             md: 8,
         }
     }
 
     return (
-        <Grid className={classes.root} item {...gridProps}>
+        <Grid className={className} item {...gridProps}>
             {children}
-            {/* <Box display="flex" flexDirection="column" height="100vh">
-                <RouteHeader />
-
-                <Box py={2} flexGrow={1} overflow="auto">
-                    <Switch>
-                        <Route path="/favorites">
-                            <Homepage />
-                        </Route>
-                        <Route path="/search">
-                            <Homepage />
-                        </Route>
-                        <Route path="/dashboard">
-                            <Homepage />
-                        </Route>
-                        <Route exact path="/">
-                            <Homepage />
-                        </Route>
-                    </Switch>
-                </Box>
-
-                <BottomNav />
-            </Box> */}
         </Grid>
     )
 }

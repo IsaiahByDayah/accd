@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components Tag 1`] = `
+<span
+  className="components-tag-muitypography-root-1 components-tag-makestyles-root-1 components-tag-makestyles-root-2 components-tag-muitypography-caption-1"
+>
+  Some Tag
+</span>
+`;

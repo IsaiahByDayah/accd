@@ -21,7 +21,7 @@ const App: FC = () => (
                 <TopContainer>
                     <Grid container>
                         <LeftPanel />
-                        <MiddlePanel />
+                        <MiddlePanel>Hello</MiddlePanel>
                         <RightPanel />
                     </Grid>
                 </TopContainer>

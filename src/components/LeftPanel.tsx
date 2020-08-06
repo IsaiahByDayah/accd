@@ -1,11 +1,10 @@
 import React, { FC } from "react"
-import { Grid, Box, makeStyles } from "@material-ui/core"
-import Icon from "@mdi/react"
-import { mdiLeaf } from "@mdi/js"
+import { Grid, makeStyles } from "@material-ui/core"
+import cx from "classnames"
 
 import { useAuth } from "providers/AuthProvider"
 
-const useStyles = makeStyles(({ breakpoints, palette }) => ({
+const useStyles = makeStyles(({ breakpoints }) => ({
     root: {
         display: "none",
 
@@ -13,25 +12,25 @@ const useStyles = makeStyles(({ breakpoints, palette }) => ({
             display: "block",
         },
     },
-    icon: {
-        color: palette.primary.main,
-    },
 }))
 
-const LeftPanel: FC = ({ children }) => {
+type LeftPanelProps = {
+    className?: string
+    simulateUser?: boolean
+}
+
+const LeftPanel: FC<LeftPanelProps> = ({ className, children, simulateUser }) => {
     const classes = useStyles()
     const { user } = useAuth()
 
-    if (!user) return null
+    if (user || simulateUser)
+        return (
+            <Grid className={cx(classes.root, className)} item xs={12} sm={2} md={1} lg={3}>
+                {children}
+            </Grid>
+        )
 
-    return (
-        <Grid className={classes.root} item xs={12} sm={2} md={1} lg={3}>
-            {children}
-            {/* <Box py={2} display="flex" flexDirection="column" alignItems="center">
-                <Icon className={classes.icon} path={mdiLeaf} size={1.5} />
-            </Box> */}
-        </Grid>
-    )
+    return null
 }
 
 export default LeftPanel

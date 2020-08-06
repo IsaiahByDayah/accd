@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components Panels 1`] = `
+<div
+  className="components-panels-muigrid-root-1 components-panels-muigrid-container-1"
+>
+  <div
+    className="components-panels-muigrid-root-1 components-panels-makestyles-panel-1 components-panels-makestyles-middle-1 components-panels-muigrid-item-1 components-panels-muigrid-grid-xs-12-1 components-panels-muigrid-grid-md-8-1"
+  >
+    Middle Panel
+  </div>
+  <div
+    className="components-panels-muigrid-root-1 components-panels-makestyles-root-2 components-panels-makestyles-panel-1 components-panels-makestyles-right-1 components-panels-muigrid-item-1 components-panels-muigrid-grid-xs-12-1 components-panels-muigrid-grid-md-4-1"
+  >
+    Right Panel
+  </div>
+</div>
+`;

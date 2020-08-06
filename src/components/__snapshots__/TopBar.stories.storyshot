@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/TopBar AppBar 1`] = `
+<header
+  className="componentstopbar-appbar-muipaper-root-1 componentstopbar-appbar-muiappbar-root-1 componentstopbar-appbar-muiappbar-positionstatic-1 componentstopbar-appbar-muiappbar-colorprimary-1 componentstopbar-appbar-makestyles-root-1 componentstopbar-appbar-muipaper-elevation0-1"
+>
+  <div
+    className="componentstopbar-appbar-muitoolbar-root-1 componentstopbar-appbar-muitoolbar-regular-1 componentstopbar-appbar-muitoolbar-gutters-1"
+  >
+    <h6
+      className="componentstopbar-appbar-muitypography-root-1 componentstopbar-appbar-makestyles-title-1 componentstopbar-appbar-muitypography-h6-1"
+    >
+      Home
+    </h6>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Components/TopBar LoggedIn 1`] = `
+<div
+  className="componentstopbar-loggedin-muicontainer-root-1 componentstopbar-loggedin-muicontainer-maxwidthlg-1"
+>
+  <div
+    className="componentstopbar-loggedin-muigrid-root-1 componentstopbar-loggedin-muigrid-container-1"
+  >
+    <div
+      className="componentstopbar-loggedin-muigrid-root-1 componentstopbar-loggedin-muigrid-item-1 componentstopbar-loggedin-muigrid-grid-xs-12-1 componentstopbar-loggedin-muigrid-grid-md-8-1"
+    >
+      <header
+        className="componentstopbar-loggedin-muipaper-root-1 componentstopbar-loggedin-muiappbar-root-1 componentstopbar-loggedin-muiappbar-positionstatic-1 componentstopbar-loggedin-muiappbar-colorprimary-1 componentstopbar-loggedin-makestyles-root-2 componentstopbar-loggedin-muipaper-elevation0-1"
+      >
+        <div
+          className="componentstopbar-loggedin-muitoolbar-root-1 componentstopbar-loggedin-muitoolbar-regular-1 componentstopbar-loggedin-muitoolbar-gutters-1"
+        >
+          <h6
+            className="componentstopbar-loggedin-muitypography-root-1 componentstopbar-loggedin-makestyles-title-1 componentstopbar-loggedin-muitypography-h6-1"
+          >
+            Home
+          </h6>
+        </div>
+      </header>
+    </div>
+    <div
+      className="componentstopbar-loggedin-muigrid-root-1 componentstopbar-loggedin-makestyles-root-3 componentstopbar-loggedin-muigrid-item-1 componentstopbar-loggedin-muigrid-grid-xs-12-1 componentstopbar-loggedin-muigrid-grid-md-4-1"
+    >
+      Logged In Right Panel
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/TopBar LoggedOut 1`] = `
+<div
+  className="componentstopbar-loggedout-muicontainer-root-1 componentstopbar-loggedout-muicontainer-maxwidthlg-1"
+>
+  <div
+    className="componentstopbar-loggedout-muigrid-root-1 componentstopbar-loggedout-muigrid-container-1"
+  >
+    <div
+      className="componentstopbar-loggedout-muigrid-root-1 componentstopbar-loggedout-muigrid-item-1 componentstopbar-loggedout-muigrid-grid-xs-12-1 componentstopbar-loggedout-muigrid-grid-md-8-1"
+    >
+      <header
+        className="componentstopbar-loggedout-muipaper-root-1 componentstopbar-loggedout-muiappbar-root-1 componentstopbar-loggedout-muiappbar-positionstatic-1 componentstopbar-loggedout-muiappbar-colorprimary-1 componentstopbar-loggedout-makestyles-root-1 componentstopbar-loggedout-muipaper-elevation0-1"
+      >
+        <div
+          className="componentstopbar-loggedout-muitoolbar-root-1 componentstopbar-loggedout-muitoolbar-regular-1 componentstopbar-loggedout-muitoolbar-gutters-1"
+        >
+          <div
+            className="componentstopbar-loggedout-muibox-root-1 componentstopbar-loggedout-muibox-root-2"
+          >
+            <svg
+              role="presentation"
+              style={
+                Object {
+                  "height": "1.5rem",
+                  "width": "1.5rem",
+                }
+              }
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"
+                style={
+                  Object {
+                    "fill": "currentColor",
+                  }
+                }
+              />
+            </svg>
+          </div>
+          <div
+            className="componentstopbar-loggedout-muibox-root-1 componentstopbar-loggedout-muibox-root-3 componentstopbar-loggedout-makestyles-root-2 componentstopbar-loggedout-makestyles-root-3 componentstopbar-loggedout-makestyles-searchbar-1 componentstopbar-loggedout-makestyles-grow-1"
+          >
+            <div
+              className="componentstopbar-loggedout-muiformcontrol-root-1 componentstopbar-loggedout-muitextfield-root-1 componentstopbar-loggedout-muiformcontrol-fullwidth-1"
+            >
+              <div
+                className="componentstopbar-loggedout-muiinputbase-root-1 componentstopbar-loggedout-muiinput-root-1 componentstopbar-loggedout-muiinputbase-fullwidth-1 componentstopbar-loggedout-muiinput-fullwidth-1 componentstopbar-loggedout-muiinputbase-formcontrol-1 componentstopbar-loggedout-muiinput-formcontrol-1 componentstopbar-loggedout-muiinputbase-adornedend-1"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid={false}
+                  aria-label="search-bar-textfield"
+                  autoFocus={false}
+                  className="componentstopbar-loggedout-muiinputbase-input-1 componentstopbar-loggedout-muiinput-input-1 componentstopbar-loggedout-makestyles-input-1 componentstopbar-loggedout-makestyles-input-2 componentstopbar-loggedout-muiinputbase-inputadornedend-1"
+                  disabled={false}
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  placeholder="Search..."
+                  required={false}
+                  type="text"
+                />
+                <div
+                  className="componentstopbar-loggedout-muiinputadornment-root-1 componentstopbar-loggedout-muiinputadornment-positionend-1"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="componentstopbar-loggedout-muisvgicon-root-1 componentstopbar-loggedout-makestyles-icon-2 componentstopbar-loggedout-makestyles-icon-3"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="componentstopbar-loggedout-muibox-root-1 componentstopbar-loggedout-muibox-root-4"
+          >
+            <button
+              className="componentstopbar-loggedout-muibuttonbase-root-1 componentstopbar-loggedout-muiiconbutton-root-1"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="componentstopbar-loggedout-muiiconbutton-label-1"
+              >
+                <svg
+                  className="componentstopbar-loggedout-makestyles-icon-1"
+                  role="presentation"
+                  style={
+                    Object {
+                      "height": "1.5rem",
+                      "width": "1.5rem",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z"
+                    style={
+                      Object {
+                        "fill": "currentColor",
+                      }
+                    }
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div
+      className="componentstopbar-loggedout-muigrid-root-1 componentstopbar-loggedout-makestyles-root-4 componentstopbar-loggedout-muigrid-item-1 componentstopbar-loggedout-muigrid-grid-xs-12-1 componentstopbar-loggedout-muigrid-grid-md-4-1"
+    >
+      <header
+        className="componentstopbar-loggedout-muipaper-root-1 componentstopbar-loggedout-muiappbar-root-1 componentstopbar-loggedout-muiappbar-positionstatic-1 componentstopbar-loggedout-muiappbar-colorprimary-1 componentstopbar-loggedout-makestyles-root-1 componentstopbar-loggedout-muipaper-elevation0-1"
+      >
+        <div
+          className="componentstopbar-loggedout-muitoolbar-root-1 componentstopbar-loggedout-muitoolbar-regular-1 componentstopbar-loggedout-muitoolbar-gutters-1"
+        >
+          <h6
+            className="componentstopbar-loggedout-muitypography-root-1 componentstopbar-loggedout-makestyles-title-1 componentstopbar-loggedout-muitypography-h6-1"
+          >
+             
+          </h6>
+          <div
+            className="componentstopbar-loggedout-muibox-root-1 componentstopbar-loggedout-muibox-root-5"
+          >
+            <button
+              className="componentstopbar-loggedout-muibuttonbase-root-1 componentstopbar-loggedout-muibutton-root-1 componentstopbar-loggedout-muibutton-outlined-1 componentstopbar-loggedout-makestyles-outlined-1 componentstopbar-loggedout-makestyles-outlined-2 componentstopbar-loggedout-makestyles-root-5 componentstopbar-loggedout-makestyles-button-1 componentstopbar-loggedout-muibutton-disableelevation-1"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="componentstopbar-loggedout-muibutton-label-1"
+              >
+                Log in
+              </span>
+            </button>
+            <button
+              className="componentstopbar-loggedout-muibuttonbase-root-1 componentstopbar-loggedout-muibutton-root-1 componentstopbar-loggedout-muibutton-contained-1 componentstopbar-loggedout-makestyles-contained-1 componentstopbar-loggedout-makestyles-contained-3 componentstopbar-loggedout-makestyles-root-5 componentstopbar-loggedout-makestyles-button-1 componentstopbar-loggedout-muibutton-disableelevation-1"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="componentstopbar-loggedout-muibutton-label-1"
+              >
+                Sign up
+              </span>
+            </button>
+            <button
+              className="componentstopbar-loggedout-muibuttonbase-root-1 componentstopbar-loggedout-muiiconbutton-root-1"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="componentstopbar-loggedout-muiiconbutton-label-1"
+              >
+                <svg
+                  className="componentstopbar-loggedout-makestyles-icon-1 componentstopbar-loggedout-makestyles-button-1"
+                  role="presentation"
+                  style={
+                    Object {
+                      "height": "1.5rem",
+                      "width": "1.5rem",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z"
+                    style={
+                      Object {
+                        "fill": "currentColor",
+                      }
+                    }
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+  </div>
+</div>
+`;

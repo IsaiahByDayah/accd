@@ -1,5 +1,8 @@
 import React, { FC } from "react"
-import { Grid, Box, makeStyles } from "@material-ui/core"
+import { makeStyles, Grid, GridProps } from "@material-ui/core"
+import cx from "classnames"
+
+import { useAuth } from "providers/AuthProvider"
 
 const useStyles = makeStyles(({ breakpoints }) => ({
     root: {
@@ -11,14 +14,31 @@ const useStyles = makeStyles(({ breakpoints }) => ({
     },
 }))
 
-const RightPanel: FC = ({ children }) => {
+type RightPanelProps = {
+    className?: string
+    simulateUser?: boolean
+}
+
+const RightPanel: FC<RightPanelProps> = ({ className, children, simulateUser }) => {
     const classes = useStyles()
+    const { user } = useAuth()
+
+    let gridProps: GridProps
+    if (user || simulateUser) {
+        gridProps = {
+            xs: 12,
+            md: 4,
+        }
+    } else {
+        gridProps = {
+            xs: 12,
+            md: 4,
+        }
+    }
+
     return (
-        <Grid className={classes.root} item xs={12} md={3}>
+        <Grid className={cx(classes.root, className)} item {...gridProps}>
             {children}
-            {/* <Box display="flex" flexDirection="column" alignItems="center">
-                Right Panel
-            </Box> */}
         </Grid>
     )
 }

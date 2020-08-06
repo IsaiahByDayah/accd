@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components Button 1`] = `
+<div
+  className="components-button-muibox-root-1 components-button-muibox-root-2"
+>
+  <button
+    className="components-button-muibuttonbase-root-1 components-button-muibutton-root-1 components-button-muibutton-text-1 components-button-makestyles-text-1 components-button-makestyles-text-2 components-button-makestyles-root-1 components-button-muibutton-disableelevation-1"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="components-button-muibutton-label-1"
+    >
+      Hello, World!
+    </span>
+  </button>
+</div>
+`;

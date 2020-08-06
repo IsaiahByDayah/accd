@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components DesignCard 1`] = `
+<div
+  className="components-designcard-muibox-root-1 components-designcard-muibox-root-2"
+>
+  <div
+    className="components-designcard-muipaper-root-1 components-designcard-makestyles-root-1 components-designcard-muipaper-elevation1-1 components-designcard-muipaper-rounded-1"
+  >
+    <div
+      className="components-designcard-muibox-root-1 components-designcard-muibox-root-3"
+    >
+      <div
+        className="components-designcard-muibox-root-1 components-designcard-muibox-root-4"
+      >
+        <p
+          className="components-designcard-muitypography-root-1 components-designcard-makestyles-title-1 components-designcard-muitypography-body1-1"
+        >
+          Some Title
+        </p>
+        <p
+          className="components-designcard-muitypography-root-1 components-designcard-makestyles-code-1 components-designcard-muitypography-body1-1"
+        >
+          #
+          0000-0000-0000
+        </p>
+      </div>
+      <div
+        className="components-designcard-muibox-root-1 components-designcard-muibox-root-5"
+      >
+        <div
+          className="components-designcard-muigrid-root-1 components-designcard-muigrid-container-1 components-designcard-muigrid-spacing-xs-1-1"
+        >
+          <div
+            className="components-designcard-muigrid-root-1 components-designcard-muigrid-item-1 components-designcard-muigrid-grid-xs-12-1"
+          >
+            <div
+              className="components-designcard-muibox-root-1 components-designcard-muibox-root-6 components-designcard-makestyles-image-1 components-designcard-makestyles-topimage-1"
+              style={
+                Object {
+                  "backgroundImage": "url(https://via.placeholder.com/1600x900.jpg)",
+                }
+              }
+            />
+          </div>
+          <div
+            className="components-designcard-muigrid-root-1 components-designcard-muigrid-item-1 components-designcard-muigrid-grid-xs-4-1"
+          >
+            <div
+              className="components-designcard-muibox-root-1 components-designcard-muibox-root-7 components-designcard-makestyles-image-1 components-designcard-makestyles-bottomimage-1"
+              style={
+                Object {
+                  "backgroundImage": "url(https://via.placeholder.com/1600x900.jpg)",
+                }
+              }
+            />
+          </div>
+          <div
+            className="components-designcard-muigrid-root-1 components-designcard-muigrid-item-1 components-designcard-muigrid-grid-xs-4-1"
+          >
+            <div
+              className="components-designcard-muibox-root-1 components-designcard-muibox-root-8 components-designcard-makestyles-image-1 components-designcard-makestyles-bottomimage-1"
+              style={
+                Object {
+                  "backgroundImage": "url(https://via.placeholder.com/1600x900.jpg)",
+                }
+              }
+            />
+          </div>
+          <div
+            className="components-designcard-muigrid-root-1 components-designcard-muigrid-item-1 components-designcard-muigrid-grid-xs-4-1"
+          >
+            <div
+              className="components-designcard-muibox-root-1 components-designcard-muibox-root-9 components-designcard-makestyles-image-1 components-designcard-makestyles-bottomimage-1"
+              style={
+                Object {
+                  "backgroundImage": "url(https://via.placeholder.com/1600x900.jpg)",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="components-designcard-muibox-root-1 components-designcard-muibox-root-10"
+      >
+        <div
+          className="components-designcard-muiavatar-root-1 components-designcard-muiavatar-circle-1 components-designcard-makestyles-avatar-1 components-designcard-muiavatar-colordefault-1"
+        >
+          <svg
+            aria-hidden={true}
+            className="components-designcard-muisvgicon-root-1 components-designcard-muiavatar-fallback-1"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+        </div>
+        <p
+          className="components-designcard-muitypography-root-1 components-designcard-makestyles-creatorname-1 components-designcard-muitypography-body1-1"
+        >
+          John Doe
+        </p>
+        <div
+          className="components-designcard-muibox-root-1 components-designcard-muibox-root-11 components-designcard-makestyles-tags-1"
+        >
+          <div
+            className="components-designcard-muibox-root-1 components-designcard-muibox-root-12 components-designcard-makestyles-tag-1"
+          >
+            <span
+              className="components-designcard-muitypography-root-1 components-designcard-makestyles-root-2 components-designcard-makestyles-root-3 components-designcard-muitypography-caption-1"
+            >
+              Tag
+            </span>
+          </div>
+          <div
+            className="components-designcard-muibox-root-1 components-designcard-muibox-root-13 components-designcard-makestyles-tag-1"
+          >
+            <span
+              className="components-designcard-muitypography-root-1 components-designcard-makestyles-root-2 components-designcard-makestyles-root-4 components-designcard-muitypography-caption-1"
+            >
+              Tag
+            </span>
+          </div>
+          <div
+            className="components-designcard-muibox-root-1 components-designcard-muibox-root-14 components-designcard-makestyles-tag-1"
+          >
+            <span
+              className="components-designcard-muitypography-root-1 components-designcard-makestyles-root-2 components-designcard-makestyles-root-5 components-designcard-muitypography-caption-1"
+            >
+              Tag
+            </span>
+          </div>
+        </div>
+        <button
+          className="components-designcard-muibuttonbase-root-1 components-designcard-muiiconbutton-root-1"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <span
+            className="components-designcard-muiiconbutton-label-1"
+          >
+            <span
+              aria-hidden={true}
+              className="material-icons components-designcard-muiicon-root-1"
+            >
+              <svg
+                aria-hidden={true}
+                className="components-designcard-muisvgicon-root-1"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.66 3.99c-2.64-1.8-5.9-.96-7.66 1.1-1.76-2.06-5.02-2.91-7.66-1.1-1.4.96-2.28 2.58-2.34 4.29-.14 3.88 3.3 6.99 8.55 11.76l.1.09c.76.69 1.93.69 2.69-.01l.11-.1c5.25-4.76 8.68-7.87 8.55-11.75-.06-1.7-.94-3.32-2.34-4.28zM12.1 18.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"
+                />
+              </svg>
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
