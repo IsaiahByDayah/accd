@@ -3,7 +3,7 @@ import React from "react"
 import { boolean, text, select } from "@storybook/addon-knobs"
 import { action } from "@storybook/addon-actions"
 
-import { PromptBase, LoginPrompt, ConfirmationPrompt } from "components/Prompt"
+import { PromptBase, AuthPrompt, ConfirmationPrompt, LoginPrompt, SignupPrompt } from "components/Prompt"
 
 storiesOf("Components/Prompt", module)
     .add("Base", () => (
@@ -14,8 +14,8 @@ storiesOf("Components/Prompt", module)
             onClose={action("On Close")}
         />
     ))
-    .add("Login", () => (
-        <LoginPrompt user={text("User", "John Doe")} reason={select("Reason", ["like", "comment"], "like")} />
+    .add("Auth", () => (
+        <AuthPrompt user={text("User", "John Doe")} reason={select("Reason", ["like", "comment"], "like")} />
     ))
     .add("Confirmation", () => (
         <ConfirmationPrompt
@@ -25,3 +25,5 @@ storiesOf("Components/Prompt", module)
             onClose={boolean("Can Close?", false) ? action("On Close") : undefined}
         />
     ))
+    .add("Login", () => <LoginPrompt open={boolean("Open?", true)} />)
+    .add("Signup", () => <SignupPrompt open={boolean("Open?", true)} />)

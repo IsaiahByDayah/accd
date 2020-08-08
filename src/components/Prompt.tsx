@@ -1,10 +1,12 @@
 import React, { FC, ReactNode } from "react"
 import { makeStyles, Modal, Paper, Box, Container, IconButton, Typography } from "@material-ui/core"
 import { CloseRounded, FavoriteRounded, ChatBubbleRounded, LiveHelpRounded, BeenhereRounded } from "@material-ui/icons"
+import cx from "classnames"
 
 import { usePrompt } from "providers/PromptProvider"
 
 import Button from "components/Button"
+import InputField from "components/InputField"
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
     root: {
@@ -82,22 +84,22 @@ export const PromptBase: FC<PromptProps> = ({ open, header, title, description, 
     )
 }
 
-const useLoginStyles = makeStyles(({ spacing }) => ({
+const useAuthStyles = makeStyles(({ spacing }) => ({
     loginButton: {
         marginBottom: spacing(2),
     },
 }))
 
-type LoginPromptReason = "like" | "comment"
+type AuthPromptReason = "like" | "comment"
 
-export interface LoginPromptProps {
-    reason: LoginPromptReason
+export interface AuthPromptProps {
+    reason: AuthPromptReason
     user: string
     onClose?: () => void
 }
 
-export const LoginPrompt: FC<LoginPromptProps> = ({ reason, user, onClose }) => {
-    const classes = useLoginStyles()
+export const AuthPrompt: FC<AuthPromptProps> = ({ reason, user, onClose }) => {
+    const classes = useAuthStyles()
 
     return (
         <PromptBase
@@ -188,6 +190,83 @@ export const ConfirmationPrompt: FC<ConfirmationPromptProps> = ({
     )
 }
 
+const useLoginStyles = makeStyles(({ spacing }) => ({
+    field: {
+        "&:not(:last-child)": {
+            marginBottom: spacing(),
+        },
+    },
+    loginButton: {
+        marginTop: spacing(2),
+    },
+}))
+
+export interface LoginPromptProps {
+    open?: boolean
+    onLogin?: () => void
+    onClose?: () => void
+}
+
+export const LoginPrompt: FC<LoginPromptProps> = ({ open = false, onLogin, onClose }) => {
+    const classes = useLoginStyles()
+
+    return (
+        <PromptBase open={open} title="Login" description="Login to get started!" onClose={onClose}>
+            <Box py={4} display="flex" flexDirection="column">
+                <InputField className={classes.field} placeholder="Username" />
+                <InputField className={classes.field} placeholder="Password" type="password" />
+                <Button
+                    className={cx(classes.field, classes.loginButton)}
+                    variant="contained"
+                    fullWidth
+                    onClick={onLogin}
+                >
+                    Log In
+                </Button>
+            </Box>
+        </PromptBase>
+    )
+}
+
+const useSignupStyles = makeStyles(({ spacing }) => ({
+    field: {
+        "&:not(:last-child)": {
+            marginBottom: spacing(),
+        },
+    },
+    loginButton: {
+        marginTop: spacing(2),
+    },
+}))
+
+export interface SignupPromptProps {
+    open?: boolean
+    onLogin?: () => void
+    onClose?: () => void
+}
+
+export const SignupPrompt: FC<SignupPromptProps> = ({ open = false, onLogin, onClose }) => {
+    const classes = useSignupStyles()
+
+    return (
+        <PromptBase open={open} title="Signup" description="Signup to get started!" onClose={onClose}>
+            <Box py={4} display="flex" flexDirection="column">
+                <InputField className={classes.field} placeholder="Username" />
+                <InputField className={classes.field} placeholder="Password" type="password" />
+                <InputField className={classes.field} placeholder="Password" type="password" />
+                <Button
+                    className={cx(classes.field, classes.loginButton)}
+                    variant="contained"
+                    fullWidth
+                    onClick={onLogin}
+                >
+                    Log In
+                </Button>
+            </Box>
+        </PromptBase>
+    )
+}
+
 const Prompt = () => {
     const { open, current } = usePrompt()
 
@@ -195,7 +274,7 @@ const Prompt = () => {
 
     switch (current?.type) {
         case "login":
-            return <LoginPrompt {...current} />
+            return <AuthPrompt {...current} />
         case "confirm":
             return <ConfirmationPrompt {...current} />
         default:
