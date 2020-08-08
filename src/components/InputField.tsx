@@ -14,9 +14,6 @@ const useStyles = makeStyles<Theme, { tint: string; opacity: number }>(({ spacin
             color: fade(palette.getContrastText(tint), 0.75),
         },
     }),
-    icon: ({ tint }) => ({
-        color: fade(palette.getContrastText(tint), 0.25),
-    }),
 }))
 
 export interface InputFieldProps extends StandardTextFieldProps {
