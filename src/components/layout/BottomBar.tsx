@@ -15,7 +15,7 @@ import { useRouteMatch, useHistory } from "react-router-dom"
 
 import { useAuth } from "providers/AuthProvider"
 
-import Button from "components/Button"
+import Button from "components/common/Button"
 
 const useBottomNavStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     root: {
@@ -35,7 +35,7 @@ const useBottomNavStyles = makeStyles(({ palette, breakpoints, spacing }) => ({
     },
 }))
 
-interface BottomNavBaseProps extends BottomNavigationProps {
+export interface BottomNavBaseProps extends BottomNavigationProps {
     onTabChange?: (value: any) => void
 }
 
@@ -117,7 +117,7 @@ const useBottomLoginStyles = makeStyles(({ palette, breakpoints, spacing }) => (
     },
 }))
 
-interface BottomLoginBaseProps {
+export type BottomLoginBaseProps = {
     className?: string
     onLogin: () => void
     onSignup: () => void

@@ -1,81 +1,87 @@
 {
-	"name": "cra-typescript",
-	"version": "0.1.0",
-	"scripts": {
-		"dev": "concurrently --kill-others \"yarn emulate\" \"yarn start\" \"yarn storybook\"",
-		"emulate": "firebase emulators:start",
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"deploy": "firebase deploy",
-		"lint": "eslint './src/**/*.{ts,tsx}' './functions/src/**/*.{ts,tsx}'",
-		"format": "prettier --config ./.prettierrc.json --ignore-path ./.prettierignore --write './src/**/*.{ts,tsx}' './functions/src/**/*.{ts,tsx}'",
-		"storybook": "start-storybook -p 9009 -s public --ci",
-		"build-storybook": "build-storybook -s public",
-		"serve-storybook": "yarn build-storybook && npx serve storybook-static"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"dependencies": {
-		"@material-ui/core": "^4.11.0",
-		"@material-ui/icons": "^4.9.1",
-		"@material-ui/lab": "^4.0.0-alpha.56",
-		"@mdi/js": "^5.3.45",
-		"@mdi/react": "^1.4.0",
-		"classnames": "^2.2.6",
-		"firebase": "^7.16.1",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"react-router-dom": "^5.2.0",
-		"react-scripts": "^3.4.1",
-		"react-test-renderer": "^16.13.1",
-		"typeface-nunito": "^1.1.3",
-		"typeface-roboto-slab": "^1.1.4"
-	},
-	"devDependencies": {
-		"@storybook/addon-a11y": "^5.3.19",
-		"@storybook/addon-actions": "^5.3.19",
-		"@storybook/addon-backgrounds": "^5.3.19",
-		"@storybook/addon-console": "^1.2.1",
-		"@storybook/addon-knobs": "^5.3.19",
-		"@storybook/addon-links": "^5.3.19",
-		"@storybook/addon-notes": "^5.3.19",
-		"@storybook/addon-storyshots": "^5.3.19",
-		"@storybook/addon-viewport": "^5.3.19",
-		"@storybook/addons": "^5.3.19",
-		"@storybook/react": "^5.3.19",
-		"@types/classnames": "^2.2.10",
-		"@types/jest": "^26.0.3",
-		"@types/node": "^14.0.14",
-		"@types/react": "^16.9.41",
-		"@types/react-dom": "^16.9.8",
-		"@types/react-router-dom": "^5.1.5",
-		"@types/react-test-renderer": "^16.9.2",
-		"@types/storybook__addon-storyshots": "^5.3.1",
-		"@types/storybook__react": "^5.2.1",
-		"@typescript-eslint/eslint-plugin": "^3.5.0",
-		"@typescript-eslint/parser": "^3.5.0",
-		"concurrently": "^5.2.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-config-react": "^1.1.7",
-		"eslint-plugin-prettier": "^3.1.4",
-		"eslint-plugin-react-hooks": "^4.0.5",
-		"prettier": "^2.0.5",
-		"require-context.macro": "^1.2.2",
-		"typescript": "^3.9.6"
-	}
+  "name": "cra-typescript",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "concurrently --kill-others \"yarn emulate\" \"yarn start\" \"yarn storybook\"",
+    "emulate": "firebase emulators:start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "firebase deploy",
+    "lint": "eslint './src/**/*.{ts,tsx}' './functions/src/**/*.{ts,tsx}'",
+    "format": "prettier --config ./.prettierrc.json --ignore-path ./.prettierignore --write './src/**/*.{ts,tsx}' './functions/src/**/*.{ts,tsx}'",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "serve-storybook": "yarn build-storybook && npx serve storybook-static"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@mdi/js": "^5.5.55",
+    "@mdi/react": "^1.4.0",
+    "classnames": "^2.2.6",
+    "firebase": "^7.18.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "react-test-renderer": "^16.13.1",
+    "typeface-nunito": "^1.1.3",
+    "typeface-roboto-slab": "^1.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@storybook/addon-a11y": "^6.0.7",
+    "@storybook/addon-actions": "^6.0.7",
+    "@storybook/addon-backgrounds": "^6.0.7",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-essentials": "^6.0.7",
+    "@storybook/addon-knobs": "^6.0.7",
+    "@storybook/addon-links": "^6.0.7",
+    "@storybook/addon-notes": "^5.3.19",
+    "@storybook/addon-storyshots": "^6.0.7",
+    "@storybook/addon-viewport": "^6.0.7",
+    "@storybook/addons": "^6.0.7",
+    "@storybook/node-logger": "^6.0.7",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^6.0.7",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.0.27",
+    "@types/react": "^16.9.46",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-test-renderer": "^16.9.3",
+    "@types/storybook__addon-storyshots": "^5.3.1",
+    "@types/storybook__react": "^5.2.1",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "babel-loader": "^8.1.0",
+    "concurrently": "^5.3.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "prettier": "^2.0.5",
+    "react-is": "^16.13.1",
+    "require-context.macro": "^1.2.2",
+    "typescript": "^3.9.7"
+  }
 }

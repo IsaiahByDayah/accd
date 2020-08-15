@@ -32,7 +32,7 @@ const useStyles = makeStyles<Theme, { tint?: string; textContrastTint?: string }
     }),
 }))
 
-interface ButtonProps extends MUIButtonProps {
+export interface ButtonProps extends MUIButtonProps {
     tint?: string
     textContrastTint?: string
 }

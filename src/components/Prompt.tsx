@@ -5,7 +5,7 @@ import cx from "classnames"
 
 import { usePrompt } from "providers/PromptProvider"
 
-import Button from "components/Button"
+import Button from "components/common/Button"
 import InputField from "components/InputField"
 
 const useStyles = makeStyles(({ spacing, breakpoints }) => ({
