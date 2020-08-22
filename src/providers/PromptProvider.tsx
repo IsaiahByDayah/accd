@@ -1,6 +1,6 @@
 import React, { FC, createContext, useContext, useState } from "react"
 
-import { LoginPromptProps, ConfirmationPromptProps } from "components/Prompt"
+import { LoginPromptProps, ConfirmationPromptProps } from "components/common/dialogs/Prompt"
 
 interface LoginPromptOptions extends LoginPromptProps {
     type: "login"
